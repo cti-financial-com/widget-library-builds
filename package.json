@@ -1,0 +1,6 @@
+{
+  "name": "refinitiv-widget-build",
+  "workspaces": [
+    "packages/widgetA"
+  ]
+}
