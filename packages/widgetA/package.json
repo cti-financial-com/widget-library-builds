@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "vite build",
+    "bundle": "vite build -c vite.config.bundle.js",
     "dev": "vite",
     "prepublishOnly": "vitest --run && npm run build",
     "preview": "vite preview",
@@ -38,15 +39,9 @@
   "peerDependencies": {
     "@dory/fe-components": "^2.X",
     "@dory/fe-fidlet": "^2.X",
-    "@vue/composition-api": "^1.4.4",
     "vue": "~2.6.14 || ~2.7.13",
     "vue-i18n": "^8.26.7",
     "vue-i18n-bridge": "^9.2.2"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
   },
   "publishConfig": {
     "registry": "http://nexus.financial.com/nexus/repository/npm-snapshots/"

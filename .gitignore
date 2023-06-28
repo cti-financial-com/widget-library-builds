@@ -36,6 +36,7 @@ lerna-error.log*
 
 # build and deployment
 /packages/*/dist
+/packages/*/dist-bundle
 /packages/*/dist-ssr
 /packages/*/dist-static
 /packages/*/release
