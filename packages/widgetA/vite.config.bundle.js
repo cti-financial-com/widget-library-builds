@@ -3,16 +3,24 @@ import { defineConfig } from 'vite';
 import pkg from './package.json';
 
 import vue from '@vitejs/plugin-vue2';
+import replace from 'rollup-plugin-replace';
 
 const dependencies = new Set([
-
   ...Object.keys(pkg.dependencies || {}),
   ...Object.keys(pkg.peerDependencies || {}),
 ]);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    replace({
+      values: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+        'global.process.env.NODE_ENV': JSON.stringify('production'),
+      },
+    }),
+  ],
   resolve: {
     alias: [
       {
@@ -44,7 +52,7 @@ export default defineConfig({
             case 'vue-i18n':
             case 'vue-i18n-bridge':
             case 'vue-demi': {
-              if(!acc.vue) acc.vue = [];
+              if (!acc.vue) acc.vue = [];
               acc.vue.push(dependency);
               break;
             }
@@ -55,17 +63,17 @@ export default defineConfig({
             case '@dory/fe-composables':
             case '@dory/fe-components':
             case '@dory/fe-fidlet': {
-              if(!acc.dory) acc.dory = [];
+              if (!acc.dory) acc.dory = [];
               acc.dory.push(dependency);
               break;
             }
             default: {
               acc[dependency] = [dependency];
-            };
+            }
           }
           return acc;
         }, {}),
-        chunkFileNames: '[name].mjs'
+        chunkFileNames: '[name].mjs',
       },
       // make sure to externalize deps that shouldn't be bundled
       // into your library

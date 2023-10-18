@@ -54,6 +54,14 @@ export default class WidgetA {
       render: (h) => h(App),
     });
 
+    // Widget API
+    this.changeLocale = function (locale) {
+      this.app.$i18n.locale = locale;
+
+      return this;
+    };
+
+    // return Widget instance
     return this;
   }
 
