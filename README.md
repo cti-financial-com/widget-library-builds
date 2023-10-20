@@ -15,3 +15,13 @@
     - which widgets will be used
     - which widgets will be used together
 - build has to be in `umd` format
+
+## Experiments
+
+### `async-load`
+
+This is currently WiP. The idea is to asynchronously load the widgets in the hopes that this will help the build tools construct the dependency graph.
+
+### `vite-modules`
+
+Build Widgets that share dependencies using vite. The issue with this experiment is that there is no good way to share the dependency graph between widgets. So we get dependency files that are theoretically identical but rely on the current behavior of the build tools to maintain this. Additionally cache invalidation is a problem as the proven approach of using a hash in the filename is not possible (again due to no shared information).
