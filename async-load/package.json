@@ -1,6 +1,7 @@
 {
   "name": "refinitiv-widget-build",
   "workspaces": [
+    "internal/*",
     "packages/widgets/*",
     "packages/customers/*"
   ],

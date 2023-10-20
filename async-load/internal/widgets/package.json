@@ -1,0 +1,18 @@
+{
+  "name": "@dory/internal-common",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Provides internal base classes and utilities for widgets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cti-financial-com/widget-library-builds.git"
+  },
+  "license": "UNLICENSED",
+  "module": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ]
+}

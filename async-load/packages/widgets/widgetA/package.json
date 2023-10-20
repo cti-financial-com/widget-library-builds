@@ -12,9 +12,8 @@
     "src/**/*.json"
   ],
   "scripts": {
-    "build:npm": "vite build -c vite.config.npm.js",
-    "build:bundle": "vite build -c vite.config.bundle.js",
-    "dev": "vite -c vite.config.dev.js",
+    "build": "vite build",
+    "dev": "vite",
     "prepublishOnly": "vitest --run && npm run build",
     "preview": "vite preview",
     "test": "vitest"
@@ -23,6 +22,7 @@
     "vue-demi": "^0.13.11"
   },
   "devDependencies": {
+    "@dory/internal-common": "^1.0.0",
     "@dory/fe-components": "^3.X",
     "@dory/fe-fidlet": "^3.X",
     "@vitejs/plugin-vue2": "^2.0.1",
