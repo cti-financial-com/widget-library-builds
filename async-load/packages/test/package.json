@@ -1,0 +1,21 @@
+{
+  "name": "build-test",
+  "version": "1.0.0",
+  "sideEffects": [
+    "*.scss"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "vitest --run && npm run build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.0.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "sass": "^1.48.0",
+    "vite": "^4.0.0"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.financial.com/nexus/repository/npm-snapshots/"
+  }
+}

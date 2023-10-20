@@ -32,12 +32,12 @@ lerna-error.log*
 .vuepress/dist
 
 # testing
-/packages/*/coverage
+/packages/**/coverage
 
 # build and deployment
-/packages/*/dist
-/packages/*/dist-bundle
-/packages/*/dist-ssr
-/packages/*/dist-static
-/packages/*/release
+/packages/**/dist
+/packages/**/dist-bundle
+/packages/**/dist-ssr
+/packages/**/dist-static
+/packages/**/release
 /storybook-static/

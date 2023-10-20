@@ -27,7 +27,6 @@ export default mergeConfig(DevConfig, {
           switch (dependency) {
             case 'vue':
             case 'vue-i18n':
-            case 'vue-i18n-bridge':
             case 'vue-demi': {
               if (!acc.vue) acc.vue = [];
               acc.vue.push(dependency);
