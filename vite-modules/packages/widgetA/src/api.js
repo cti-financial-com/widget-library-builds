@@ -3,9 +3,9 @@ import VueI18n from 'vue-i18n';
 import { createI18n } from 'vue-i18n-bridge';
 
 // Libraries
-// import DoryComponents from '@dory/fe-components';
-// import enUSComponents from '@dory/fe-components/src/i18n/en-US';
-// import deDEComponents from '@dory/fe-components/src/i18n/de-DE';
+import DoryComponents from '@dory/fe-components';
+import enUSComponents from '@dory/fe-components/src/i18n/en-US';
+import deDEComponents from '@dory/fe-components/src/i18n/de-DE';
 
 import DoryFidlets from '@dory/fe-fidlet';
 import numberFormats from './locales/numberFormats.json';
@@ -17,7 +17,9 @@ import enUS from './locales/en-US.json';
 import deDE from './locales/de-DE.json';
 
 export default class WidgetA {
-  static createI18n(locale, fallbackLocale) {
+  constructor(locale = 'en-US', fallbackLocale = undefined) {
+    Vue.use(DoryComponents);
+    Vue.use(DoryFidlets);
     Vue.use(VueI18n, { bridge: true });
 
     const i18n = createI18n(
@@ -27,11 +29,11 @@ export default class WidgetA {
         fallbackLocale: fallbackLocale || locale,
         messages: {
           'en-US': {
-            // ...enUSComponents,
+            ...enUSComponents,
             ...enUS,
           },
           'de-DE': {
-            // ...deDEComponents,
+            ...deDEComponents,
             ...deDE,
           },
         },
@@ -42,44 +44,33 @@ export default class WidgetA {
     );
     Vue.use(i18n);
 
-    return i18n;
-  }
-
-  createApp(i18n = this.createI18n()) {
-    // Vue.use(DoryComponents);
-    Vue.use(DoryFidlets);
-
     this.app = new Vue({
-      i18n,
       render: (h) => h(App),
     });
-
-    // Widget API
-    this.changeLocale = function (locale) {
-      this.app.$i18n.locale = locale;
-
-      return this;
-    };
 
     // return Widget instance
     return this;
   }
 
   mountApp(selector) {
-    this.selector = selector;
-
-    this.app.$mount(this.selector);
+    this.app.$mount(selector);
 
     return this;
   }
 
-  destroyApp(destoryDOM = true) {
+  destroyApp(destroyDOM = true) {
     this.app.$destroy();
-    if (destoryDOM) {
-      console.log(app);
-      document.querySelector(this.selector).innerHTML = '';
+    if (destroyDOM) {
+      this.app.$el.remove();
     }
     this.app = null;
+
+    return this;
+  }
+
+  // Widget API
+  changeLocale(locale) {
+    this.app.$i18n.locale = locale;
 
     return this;
   }

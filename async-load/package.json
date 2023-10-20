@@ -1,0 +1,14 @@
+{
+  "name": "refinitiv-widget-build",
+  "workspaces": [
+    "packages/widgets/*",
+    "packages/customers/*"
+  ],
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "vitest": "^0.30.1"
+  }
+}
