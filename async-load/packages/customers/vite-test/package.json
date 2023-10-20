@@ -1,12 +1,15 @@
 {
-  "name": "build-test",
+  "name": "vite-test",
   "version": "1.0.0",
   "sideEffects": [
     "*.scss"
   ],
   "scripts": {
-    "build": "vite build",
-    "prepublishOnly": "vitest --run && npm run build"
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@dory/widget-a": "*",
+    "@dory/widget-b": "*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue2": "^2.0.1",

@@ -1,6 +1,9 @@
 // Import vue component
 import WidgetA from './src/WidgetA.vue';
 
+// Import api class
+import JSApi from './src/api.js';
+
 // Import languages
 import deDE from './src/locales/de-DE.json';
 import enUS from './src/locales/en-US.json';
@@ -18,4 +21,4 @@ export default (() => {
 })();
 
 // Directly export components
-export { deDE, enUS, WidgetA };
+export { deDE, enUS, WidgetA, JSApi };

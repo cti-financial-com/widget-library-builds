@@ -40,14 +40,10 @@ export default defineConfig({
   build: {
     outDir: 'dist-bundle',
     lib: {
-      entry: [
-        path.resolve(__dirname, '../widgets/widgetA/src/api.js'),
-        path.resolve(__dirname, '../widgets/widgetB/src/api.js'),
-      ],
+      entry: path.resolve(__dirname, 'entry.js'),
       name: 'Library',
-      formats: ['es'],
-      fileName: (format, name, rest) => {
-        console.log('Params', name, rest);
+      formats: ['umd'],
+      fileName: (format, name) => {
         return `Library.${format}.js`;
       },
     },
