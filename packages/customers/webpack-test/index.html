@@ -10,17 +10,18 @@
     <div id="appB"></div>
     <script src="./dist/vendor-corejs.js"></script>
     <script src="./dist/vendor-vue.js"></script>
-    <script src="./dist/dory-flags.js"></script>
-    <!-- <script src="./dist/372.js"></script>
-    <script src="./dist/909.js"></script>
-    <script src="./dist/927.js"></script> -->
+    <!-- <script src="./dist/dory-flags.js"></script> -->
+    <!-- <script src="./dist/372.js"></script> -->
+    <!-- <script src="./dist/909.js"></script> -->
+    <!-- <script src="./dist/927.js"></script> -->
     <script src="./dist/main.js"></script>
 
     <script href="./dist/WidgetA.js" rel="preload"></script>
     <script href="./dist/WidgetB.js" rel="preload"></script>
-    <!-- <script>
-      const widget = new Library.WidgetA().mountApp('#appA');
-      window.widget = widget;
-    </script> -->
+
+    <script>
+      window.widgetA = new Library.WidgetA().mountApp('#appA');
+      window.widgetB = new Library.WidgetB().mountApp('#appB');
+    </script>
   </body>
 </html>

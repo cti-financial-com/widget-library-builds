@@ -63,7 +63,8 @@ module.exports = {
           chunks: 'all',
         },
         flagsComponentsDory: {
-          test: /[\\/]node_modules[\\/]@dory[\\/]fe-components[\\/]((?!dist[\\/]@dory[\\/]esm[\\/]entry\.esm\.js).*)/,
+          // test: /[\\/]node_modules[\\/]@dory[\\/]fe-components[\\/]((?!dist[\\/]@dory[\\/]esm[\\/]entry\.esm\.js).*)/,
+          test: /[\\/]node_modules[\\/]@dory[\\/]fe-components[\\/]dist[\\/]@dory[\\/]esm[\\/]((?!entry\.esm\.js|en-US.json|de-DE.json).*)/,
           name: 'dory-flags',
           chunks: 'all',
         },
