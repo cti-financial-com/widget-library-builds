@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body class="dory-theme--light">
+    <div id="appA"></div>
+    <div id="appB"></div>
+    <script src="./dist/vendor-corejs.js"></script>
+    <script src="./dist/vendor-vue.js"></script>
+    <script src="./dist/dory-flags.js"></script>
+    <!-- <script src="./dist/372.js"></script>
+    <script src="./dist/909.js"></script>
+    <script src="./dist/927.js"></script> -->
+    <script src="./dist/WidgetB.js"></script>
+    <script src="./dist/WidgetA.js"></script>
+    <script src="./dist/main.js"></script>
+    <script>
+      const widget = new Library.WidgetA().mountApp('#appA');
+      window.widget = widget;
+    </script>
+  </body>
+</html>
